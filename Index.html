@@ -1,0 +1,107 @@
+<!-- Zach Daniels 
+
+    A program game similar to hangman for users to guess names of
+classic 80's music song titles -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="wordGuessStyle.css" />
+  <title>Final Exam</title>
+</head>
+
+<body>
+  <!-- 
+    If they click on the Play Again with SAME user button then call the playAgain function which does everything the
+playGame function does BUT DOES NOT prompt or create a new user.
+
+If they click on the Play Again with DIFFERENT user You will just call the playGame function. -->
+  <div class="container text-center" id="underscore">
+    <p id="displayTitleName" hidden></p>
+  </div>
+
+  <div class="container text-center">
+    <p id="titleNote" hidden>
+      NOTE: Spaces have been removed from the song title
+    </p>
+  </div>
+
+  <div class="container text-center" id="fsAvailable" hidden>
+    <strong><em>Available Characters:</em></strong>
+    <p id="availableChars"></p>
+  </div>
+
+  <div class="container text-center" id="fsUsed" hidden>
+    <strong><em>Used Characters:</em></strong>
+    <p id="usedChars"></p>
+  </div>
+
+  <div class="container text-center" id="playButton">
+    <button class="btn btn-danger" type="button" id="btnPlayGame" onclick="PlayGame()">Play Game</button>
+  </div>
+
+  <div class="container text-center" id="fsPlay" hidden>
+    <div class="input-group mb-3 justify-content-center">
+      <label for="input">Enter Character:</label>
+      <input type="text" id="inputLetter" maxlength="1">
+
+    </div>
+
+    <button type="button" id="btnGuess" class="btn btn-danger" onclick="btnGuess()">Guess!</button>
+    <br>
+    <p><strong>OR</strong></p>
+
+    <div class="input-group mb-3 justify-content-center">
+      <label for="finalGuess">Enter Your Final Guess:</label>
+      <input type="text" id="finalGuess" />
+    </div>
+
+    <em>NOTE:But if you guess wrong, 26 will be added to your guess count</em>
+
+    <button type="button" id="btnFinalGuess" class="btn btn-danger" onclick="checkWin('true')">Final
+      Guess</button>
+
+  </div>
+
+  <div class="container text-center" id="showGameResultsDiv" hidden>
+    <p id="showGameResults"></p>
+  </div>
+
+  <div class="container text-center">
+    <button class="btn btn-danger" type="button" id="btnPlayAgainSame" onclick="PlayGame('same')" hidden>Play
+      Again with SAME user?</button>
+    <button class="btn btn-danger" type="button" id="btnPlayAgainDiff" onclick="PlayGame('diff')" hidden>Play
+      Again with DIFFERENT user?</button>
+  </div>
+
+  <div class="container text-center">
+    <button type="button" id="btnShowResults" class="btn btn-dark" onclick="showGameResults()">Show Results</button>
+    <button type="button" id="btnShowGames" class="btn btn-dark" onclick="showGames()">Show Games</button>
+    <button type="button" id="btnResetForm" onclick="ResetMe()" class="btn btn-dark">Reset Form</button>
+  </div>
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="wordGuess.js"></script>
+</body>
+
+</html>

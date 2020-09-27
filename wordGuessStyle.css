@@ -1,0 +1,27 @@
+body {
+    background: url('/images/80sBackground.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+.container {
+    margin-top: 2em;
+
+}
+
+#underscore {
+    margin-top: 5rem;
+    font-size: xx-large;
+}
+
+#titleNote {
+    margin-bottom: 10rem;
+}
+
+#output {
+
+    font-size: x-large;
+}
